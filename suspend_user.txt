@@ -1,0 +1,7 @@
+Suspend user info
+id: auto roll: 136000
+id: auto roll: 123456
+id: auto roll: 136003
+id: auto roll: 136002
+id: auto roll: 011030
+id: auto roll: 011030
