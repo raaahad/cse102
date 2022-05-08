@@ -3,6 +3,7 @@
 #include <string.h>
 #include <time.h>
 
+//Funciton prototype
 void auth();
 void reg(int *logged_in_check);
 void login(int *logged_in_check);
@@ -16,6 +17,7 @@ void check_attendance_day_wise(char search_key[30]);
 void fetch_all_att();
 void search_att_with_roll();
 
+//user structure will create variable everytime
 struct user{
     char name[30];
     char password[30];
@@ -25,6 +27,7 @@ struct user{
 
 int main(){
 
+    //auth() fucntion is handling other functions
     auth();
 
 }
@@ -35,10 +38,11 @@ void auth(){
     printf("Welcome to Attendance Management System");
     printf("\n---------------------------------------");
 
+    // setting logged status 0 in first state
     int* logged_in = 0;
 
-
     printf("\n\n\n");
+    //This are option availave for everyone
     printf("1.Login \t2.Register \t3.Reset Password \t0.Exit");
     printf("\n\n\n");
 
@@ -49,12 +53,14 @@ void auth(){
 
         switch(user_choice){
             case 1:
+                // calling login() function and passing logged_in value 0. This value will be 1 once successfully logged in
                 login(&logged_in);
                 break;
             case 2:
                 reg(&logged_in);
                 break;
             case 3:
+                //key is necessary for reseting password
                 reset_pass();
                 break;
             case 0:
