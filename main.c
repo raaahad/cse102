@@ -25,6 +25,14 @@ struct user{
     char role[30];
 };
 
+
+//some global variable to call in most of the function
+char stored_name[30];
+char stored_pass[30];
+char stored_roll[30];
+char stored_role[30];
+char stored_key[30];
+
 int main(){
 
     //auth() fucntion is handling other functions
@@ -89,11 +97,6 @@ void reg(int* logged_in_check){
 
         }
 
-        char stored_name[30];
-        char stored_pass[30];
-        char stored_roll[30];
-        char stored_role[30];
-        char stored_key[30];
         int user_exist = 0;
 
         FILE *regFile;
@@ -132,9 +135,6 @@ void reg(int* logged_in_check){
 void login(int* logged_in_check){
     FILE *file;
     file = fopen("user.txt", "r");
-    char stored_name[30];
-    char stored_pass[30];
-    char stored_role[30];
     int roll[10];
     int key[10];
 
@@ -258,9 +258,6 @@ void reset_pass(){
     printf("Please enter your recovery key\n");
     scanf("%s", input_key);
 
-    char stored_name[30];
-    char stored_pass[30];
-    char stored_role[30];
     char roll[30];
     char key[30];
     char line_length[150];
@@ -450,12 +447,8 @@ void attendance_reg(){
         printf("Something went wrong");
     }else{
         char line_length[150];
-        char stored_name[30];
-        char stored_pass[30];
-        char stored_roll[30];
-        char stored_role[30];
-        char stored_key[30];
         int usr_choice;
+
         printf("\n||||||||  1=Present | 0=Absent\n");
         while ( fgets( line_length, sizeof( line_length ), usr_file ) != NULL ) { counter++;
         if( feof(usr_file) ) break;
